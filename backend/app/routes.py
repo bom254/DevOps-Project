@@ -5,7 +5,7 @@ import logging
 import time
 
 logger = logging.getLogger("trivia-api")
-router = APIROuter()
+router = APIRouter()
 
 QUESTIONS = [
     {
