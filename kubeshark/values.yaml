@@ -1,0 +1,24 @@
+tap:
+  image:
+    repository: kubeshark/tap
+    tag: latest
+  service:
+    type: NodePort
+    nodePort: 30899
+    port: 8899
+  resources:
+    limits:
+      memory: 256Mi
+      cpu: 200m
+    requests:
+      memory: 128Mi
+      cpu: 100m
+  namespaces:
+    - app
+    - observability
+  storage:
+    enabled: true
+    size: 5Gi
+  tap:
+    nodeSelector:
+      kubernetes.io/os: linux
