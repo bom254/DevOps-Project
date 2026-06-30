@@ -1,0 +1,9 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: local-overlay
+spec:
+  resources:
+  - ../../base/
+  patches:
+  - path: path-replicas.yaml
